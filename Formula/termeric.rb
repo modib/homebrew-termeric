@@ -1,8 +1,8 @@
 class Termeric < Formula
   desc "Golden prompts for your terminal"
   homepage "https://modib.github.io/termeric/"
-  url "https://github.com/modib/termeric/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "3f2f89eb32a6cca24e767124516bbdcbc7e1ff5888cb7d4b6fbc2ab53fdbed46"
+  url "https://github.com/modib/termeric/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "7d104d2a88f0488129e5d772ffebd190f2adbfbbc5bef7cea0d49d3a02dda73a"
   license "MIT"
   head "https://github.com/modib/termeric.git", branch: "main"
 
@@ -10,8 +10,13 @@ class Termeric < Formula
   depends_on "zsh"
 
   def install
+    # Install shell configs
     pkgshare.install "termeric_bash", "termeric_zsh", "termeric_fish"
+
+    # Install CLI
     bin.install "bin/termeric"
+
+    # Install completions
     bash_completion.install "completions/termeric.bash" => "termeric"
     zsh_completion.install "completions/termeric.zsh" => "_termeric"
     fish_completion.install "completions/termeric.fish" => "termeric.fish"
@@ -44,12 +49,12 @@ class Termeric < Formula
 
       Configuration (set before sourcing):
 
-        PROMPT_COLOR_MODE=on   Powerline mode: on (default) or off (colored text only)
-        PROMPT_EXIT_CODE=on   Exit indicator (default: on)
-        PROMPT_CMD_TIME=on    Command duration (default: off)
-        PROMPT_USER_HOST=on   Show user@host (default: on)
-
-      Documentation: https://modib.github.io/termeric/
+        PROMPT_COLOR=on        Master color switch: on (default) or off
+        PROMPT_SHOW_USER=on    Show user@host segment (default: on)
+        PROMPT_SHOW_EXIT=on    Show exit code on failure (default: on)
+        PROMPT_SHOW_DIR=on     Show directory path (default: on)
+        PROMPT_SHOW_SSH=on     Show SSH indicator (default: on)
+        PROMPT_SHOW_TIME=off   Show command duration (default: off)
     EOS
   end
 
