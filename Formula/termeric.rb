@@ -1,8 +1,8 @@
 class Termeric < Formula
   desc "Golden prompts for your terminal"
   homepage "https://modib.github.io/termeric/"
-  url "https://github.com/modib/termeric/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "90989fc3f4915de511e759a04fda2200297e8c47cc8a5be0e39afaf9b1d39d70"
+  url "https://github.com/modib/termeric/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "b3423ade290d5b504d633f7c98e2f1a8f3772324aa4ae1188d396409e0853dbf"
   license "MIT"
   head "https://github.com/modib/termeric.git", branch: "main"
 
@@ -50,6 +50,7 @@ class Termeric < Formula
       Configuration (set before sourcing):
 
         PROMPT_COLOR=on        Master color switch: on (default) or off
+        PROMPT_STYLE=0         Prompt style: 0=powerline, 1=basename, 2=abbreviated, 3=full path, 4=long text (default: 0)
         PROMPT_SHOW_USER=on    Show user@host segment (default: on)
         PROMPT_SHOW_EXIT=on    Show exit code on failure (default: on)
         PROMPT_SHOW_DIR=on     Show directory path (default: on)
