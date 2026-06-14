@@ -1,8 +1,8 @@
 class Termeric < Formula
   desc "Golden prompts for your terminal"
   homepage "https://modib.github.io/termeric/"
-  url "https://github.com/modib/termeric/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "a3e3121cd2f979c19d45564cb2b7933849517297d5fc3a565d19fb0c52bf531e"
+  url "https://github.com/modib/termeric/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "507ed76f90f795c8918ea7c627e8ed946a3e6f8da4564da2d44a2f2de83f4278"
   license "MIT"
   head "https://github.com/modib/termeric.git", branch: "main"
 
@@ -56,6 +56,9 @@ class Termeric < Formula
         PROMPT_SHOW_DIR=on     Show directory path (default: on)
         PROMPT_SHOW_SSH=on     Show SSH indicator when connected (default: on)
         PROMPT_SHOW_TIME=off   Show command duration when >=2s (default: off)
+        PROMPT_VENV=off        Show Python virtualenv/conda name (default: off)
+        PROMPT_NODE=off        Show Node.js version (default: off)
+        PROMPT_K8S=off         Show Kubernetes context (default: off)
     EOS
   end
 
