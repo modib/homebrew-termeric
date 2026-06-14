@@ -1,8 +1,8 @@
 class Termeric < Formula
   desc "Golden prompts for your terminal"
   homepage "https://modib.github.io/termeric/"
-  url "https://github.com/modib/termeric/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "b3423ade290d5b504d633f7c98e2f1a8f3772324aa4ae1188d396409e0853dbf"
+  url "https://github.com/modib/termeric/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "a3e3121cd2f979c19d45564cb2b7933849517297d5fc3a565d19fb0c52bf531e"
   license "MIT"
   head "https://github.com/modib/termeric.git", branch: "main"
 
@@ -54,8 +54,8 @@ class Termeric < Formula
         PROMPT_SHOW_USER=on    Show user@host segment (default: on)
         PROMPT_SHOW_EXIT=on    Show exit code on failure (default: on)
         PROMPT_SHOW_DIR=on     Show directory path (default: on)
-        PROMPT_SHOW_SSH=on     Show SSH indicator (default: on)
-        PROMPT_SHOW_TIME=off   Show command duration (default: off)
+        PROMPT_SHOW_SSH=on     Show SSH indicator when connected (default: on)
+        PROMPT_SHOW_TIME=off   Show command duration when >=2s (default: off)
     EOS
   end
 
