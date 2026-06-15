@@ -1,8 +1,8 @@
 class Termeric < Formula
   desc "Golden prompts for your terminal"
   homepage "https://modib.github.io/termeric/"
-  url "https://github.com/modib/termeric/archive/refs/tags/v1.6.0.tar.gz"
-  sha256 "c4a1848943f5f3a018e43c5853f1fcec4cf9b6f30ed3c08309e0bb3cc6cd1972"
+  url "https://github.com/modib/termeric/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "d1a126ab9bc4cc4dc1e7d25e4fca3f897784ad5dfcc36487fdc4c345df7f1ed8"
   license "MIT"
   head "https://github.com/modib/termeric.git", branch: "main"
 
@@ -46,11 +46,16 @@ class Termeric < Formula
 
         termeric font
 
-      AI agent (new in 1.6.0):
+      AI agent (improved in 1.7.0):
 
-        termeric ai doctor   # check system readiness
-        termeric ai config   # create config template
-        termeric ai agent    # start interactive session
+        termeric ai doctor       # check system readiness
+        termeric ai config       # create config template
+        termeric ai agent        # start interactive session
+        termeric ai clear-cache  # clear cached git status
+
+      AI supports: Groq (default), Ollama, OpenAI, Gemini
+      Developer commands (npm, cargo, pip install -r, etc.) are blocked.
+      Max 3 tool-usage turns per query with rate-limit protection.
 
       Configuration (set before sourcing):
 
@@ -64,7 +69,7 @@ class Termeric < Formula
         PROMPT_VENV=off        Show Python virtualenv/conda name (default: off)
         PROMPT_NODE=off        Show Node.js version (default: off)
         PROMPT_K8S=off         Show Kubernetes context (default: off)
-        AI_BACKEND=groq        Default AI backend: groq, ollama, openai
+        AI_BACKEND=groq        Default AI backend: groq, ollama, openai, gemini
         AI_MODEL=              Override default model per backend
     EOS
   end
